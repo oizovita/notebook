@@ -41,7 +41,7 @@ $this->title = 'Notebook';
                                     </div>
                                     <div class="modal-body">
                                         <p>Name <?= Html::encode("{$contact->name} ") ?> </p>
-                                        <img src="/uploads/<?= $contact->id . "/" . $contact->photo ?>"
+                                        <img src="../uploads/<?= $contact->id . "/" . $contact->photo ?>"
                                              alt="photo not found" width="70px" height="70px">
                                         <p>Phone <?= Html::encode("{$contact->phone} ") ?> </p>
                                         <p>Email <?= Html::encode("{$contact->email} ") ?> </p>
