@@ -96,9 +96,9 @@ class SiteController extends Controller
             $model->photo = UploadedFile::getInstance($model, 'photo');
 
             if ($model->addNewContact()) {
-                mkdir(__DIR__. '/../uploads/' . $model->getID(), 0777, true);
+                mkdir(__DIR__ . '/../uploads/' . $model->getID(), 0777, true);
                 if ($model->photo != null) {
-                    $model->photo->saveAs(__DIR__.'/../uploads/' .  $model->getID() . '/' . $model->photo->baseName . '.' .
+                    $model->photo->saveAs(__DIR__ . '/../uploads/' .  $model->getID() . '/' . $model->photo->baseName . '.' .
                         $model->photo->extension);
                 }
                 return $this->goHome();
