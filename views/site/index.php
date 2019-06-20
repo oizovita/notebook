@@ -21,7 +21,8 @@ $this->title = 'Notebook';
             <div class="col-lg-3 ">
                 <ul id="name" class="list-group">
                     <li class="list-group-item">Name
-                        <button  onclick="sortListDir('name','A','LI','LI','LI','phone','email','day')" type="button" class="btn btn-outline-primary btn-sm">
+                        <button onclick="sortListDir('name','A','LI','LI','LI','phone','email','day')" type="button"
+                                class="btn btn-outline-primary btn-sm">
                             <img src="https://img.icons8.com/small/16/000000/alphabetical-sorting.png"></button>
                     </li>
                     <?php foreach ($contacts as $contact): ?>
@@ -40,14 +41,25 @@ $this->title = 'Notebook';
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Name <?= Html::encode("{$contact->name} ") ?> </p>
-                                        <img src="../uploads/<?= $contact->id . "/" . $contact->photo ?>"
-                                             alt="photo not found" width="70px" height="70px">
-                                        <p>Phone <?= Html::encode("{$contact->phone} ") ?> </p>
-                                        <p>Email <?= Html::encode("{$contact->email} ") ?> </p>
-                                        <p>Country <?= Html::encode("{$contact->country} ") ?> </p>
-                                        <p>City <?= Html::encode("{$contact->city} ") ?> </p>
-                                        <p>Facebook <?= Html::encode("{$contact->facebook} ") ?> </p>
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-5"> <img src="../uploads/<?= $contact->id . "/" . $contact->photo ?>"
+                                                                            alt="photo not found" width="170px" height="170px"></div>
+                                                <div class="col-md-5 ml-auto"><p>Name: <?= Html::encode("{$contact->name} ") ?> </p>
+                                                    <p>Phone: <?= Html::encode("{$contact->phone} ") ?> </p>
+                                                    <p>Email: <?= Html::encode("{$contact->email} ") ?> </p>
+                                                    <p>Country: <?= Html::encode("{$contact->country} ") ?> </p>
+                                                    <p>City: <?= Html::encode("{$contact->city} ") ?> </p>
+                                                    <p>Facebook: <?= Html::encode("{$contact->facebook} ") ?> </p>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
 
                                     </div>
                                     <div class="modal-footer">
@@ -91,7 +103,8 @@ $this->title = 'Notebook';
             <div class="col-lg-2">
                 <ul id="day" class="list-group">
                     <p class="list-group-item">Birthday
-                        <button onclick="sortListDir('day','LI','A','LI','LI','name','email','phone')" type="button" class="btn btn-outline-primary btn-sm">
+                        <button onclick="sortListDir('day','LI','A','LI','LI','name','email','phone')" type="button"
+                                class="btn btn-outline-primary btn-sm">
                             <img src="https://img.icons8.com/small/16/000000/numerical-sorting-21.png"></button>
                     </p>
                     <?php foreach ($contacts as $contact): ?>
@@ -155,10 +168,10 @@ $this->title = 'Notebook';
     function sortListDir(id, tag, tagOneColum, tagTwoColum, tagThreeColumn, colOne, colTwo, colThree) {
         var list, i, switching, b, shouldSwitch, dir, switchcount = 0;
         list = document.getElementById(id);
-        var listOneId =document.getElementById(colOne);
-        var listTwoId =document.getElementById(colTwo);
-        var listThreeId =document.getElementById(colThree);
-        var listDelId =document.getElementById("delete");
+        var listOneId = document.getElementById(colOne);
+        var listTwoId = document.getElementById(colTwo);
+        var listThreeId = document.getElementById(colThree);
+        var listDelId = document.getElementById("delete");
         switching = true;
         //Set the sorting direction to ascending:
         dir = "asc";
